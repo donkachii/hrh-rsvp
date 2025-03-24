@@ -94,6 +94,7 @@ app.post("/api/upload-drive", upload.single("file"), async (req, res) => {
     res.json({ fileId: response.data.id });
   } catch (err) {
     console.error("Error uploading file:", err);
+    
     res.status(500).json({ error: "Failed to upload file" });
   }
 });
